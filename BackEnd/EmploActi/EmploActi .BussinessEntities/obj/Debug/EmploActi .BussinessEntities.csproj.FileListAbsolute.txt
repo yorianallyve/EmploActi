@@ -1,0 +1,6 @@
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi .BussinessEntities\bin\Debug\EmploActi.BussinessEntities.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi .BussinessEntities\bin\Debug\EmploActi.BussinessEntities.pdb
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi .BussinessEntities\obj\Debug\EmploActi .BussinessEntities.csprojAssemblyReference.cache
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi .BussinessEntities\obj\Debug\EmploActi .BussinessEntities.csproj.CoreCompileInputs.cache
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi .BussinessEntities\obj\Debug\EmploActi.BussinessEntities.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi .BussinessEntities\obj\Debug\EmploActi.BussinessEntities.pdb

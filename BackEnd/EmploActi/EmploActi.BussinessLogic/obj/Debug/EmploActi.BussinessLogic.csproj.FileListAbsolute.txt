@@ -1,0 +1,17 @@
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.BussinessLogic.dll.config
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.BussinessLogic.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.BussinessLogic.pdb
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.BussinessEntities.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.DataAccess.SQL.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EntityFramework.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EntityFramework.SqlServer.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.BussinessEntities.pdb
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.DataAccess.SQL.pdb
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EmploActi.DataAccess.SQL.dll.config
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EntityFramework.xml
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\bin\Debug\EntityFramework.SqlServer.xml
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\obj\Debug\EmploActi.BussinessLogic.csprojAssemblyReference.cache
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\obj\Debug\EmploActi.BussinessLogic.csproj.CoreCompileInputs.cache
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\obj\Debug\EmploActi.BussinessLogic.csproj.CopyComplete
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\obj\Debug\EmploActi.BussinessLogic.dll
+F:\Proyectos\Pruebas Tecnicas\PTDoctus\BackEnd\EmploActi\EmploActi.BussinessLogic\obj\Debug\EmploActi.BussinessLogic.pdb

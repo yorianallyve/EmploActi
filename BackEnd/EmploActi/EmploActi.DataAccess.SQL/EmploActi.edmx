@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmploActiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Activities">
+          <Key>
+            <PropertyRef Name="ActivitiesCode" />
+          </Key>
+          <Property Name="ActivitiesCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameActivities" Type="nvarchar" MaxLength="250" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeActivity">
+          <Key>
+            <PropertyRef Name="CodeTimeActivity" />
+          </Key>
+          <Property Name="CodeTimeActivity" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ActivitiesCode" Type="int" Nullable="false" />
+          <Property Name="DateActivity" Type="date" Nullable="false" />
+          <Property Name="Hours" Type="int" Nullable="false" />
+          <Property Name="IdUser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameUser" Type="nvarchar" MaxLength="80" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Activities_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Activities" Type="Self.Activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Activities">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeActivity_Activities">
+          <End Role="Activities" Type="Self.Activities" Multiplicity="1" />
+          <End Role="TimeActivity" Type="Self.TimeActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activities">
+              <PropertyRef Name="ActivitiesCode" />
+            </Principal>
+            <Dependent Role="TimeActivity">
+              <PropertyRef Name="ActivitiesCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeActivity_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="TimeActivity" Type="Self.TimeActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TimeActivity">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmploActiModelStoreContainer">
+          <EntitySet Name="Activities" EntityType="Self.Activities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeActivity" EntityType="Self.TimeActivity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Activities_User" Association="Self.FK_Activities_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Activities" EntitySet="Activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeActivity_Activities" Association="Self.FK_TimeActivity_Activities">
+            <End Role="Activities" EntitySet="Activities" />
+            <End Role="TimeActivity" EntitySet="TimeActivity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeActivity_User" Association="Self.FK_TimeActivity_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="TimeActivity" EntitySet="TimeActivity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmploActiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activities">
+          <Key>
+            <PropertyRef Name="ActivitiesCode" />
+          </Key>
+          <Property Name="ActivitiesCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameActivities" Type="String" MaxLength="250" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Activities_User" FromRole="Activities" ToRole="User" />
+          <NavigationProperty Name="TimeActivity" Relationship="Self.FK_TimeActivity_Activities" FromRole="Activities" ToRole="TimeActivity" />
+        </EntityType>
+        <EntityType Name="TimeActivity">
+          <Key>
+            <PropertyRef Name="CodeTimeActivity" />
+          </Key>
+          <Property Name="CodeTimeActivity" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ActivitiesCode" Type="Int32" Nullable="false" />
+          <Property Name="DateActivity" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Hours" Type="Int32" Nullable="false" />
+          <Property Name="IdUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Activities" Relationship="Self.FK_TimeActivity_Activities" FromRole="TimeActivity" ToRole="Activities" />
+          <NavigationProperty Name="User" Relationship="Self.FK_TimeActivity_User" FromRole="TimeActivity" ToRole="User" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="IdUser" />
+          </Key>
+          <Property Name="IdUser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameUser" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Activities" Relationship="Self.FK_Activities_User" FromRole="User" ToRole="Activities" />
+          <NavigationProperty Name="TimeActivity" Relationship="Self.FK_TimeActivity_User" FromRole="User" ToRole="TimeActivity" />
+        </EntityType>
+        <Association Name="FK_Activities_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Activities" Type="Self.Activities" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="Activities">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeActivity_Activities">
+          <End Role="Activities" Type="Self.Activities" Multiplicity="1" />
+          <End Role="TimeActivity" Type="Self.TimeActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Activities">
+              <PropertyRef Name="ActivitiesCode" />
+            </Principal>
+            <Dependent Role="TimeActivity">
+              <PropertyRef Name="ActivitiesCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TimeActivity_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="TimeActivity" Type="Self.TimeActivity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="IdUser" />
+            </Principal>
+            <Dependent Role="TimeActivity">
+              <PropertyRef Name="IdUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EmploActiEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activities" />
+          <EntitySet Name="TimeActivity" EntityType="Self.TimeActivity" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <AssociationSet Name="FK_Activities_User" Association="Self.FK_Activities_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Activities" EntitySet="Activities" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeActivity_Activities" Association="Self.FK_TimeActivity_Activities">
+            <End Role="Activities" EntitySet="Activities" />
+            <End Role="TimeActivity" EntitySet="TimeActivity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TimeActivity_User" Association="Self.FK_TimeActivity_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="TimeActivity" EntitySet="TimeActivity" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmploActiModelStoreContainer" CdmEntityContainer="EmploActiEntities">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="EmploActiModel.Activities">
+              <MappingFragment StoreEntitySet="Activities">
+                <ScalarProperty Name="ActivitiesCode" ColumnName="ActivitiesCode" />
+                <ScalarProperty Name="NameActivities" ColumnName="NameActivities" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeActivity">
+            <EntityTypeMapping TypeName="EmploActiModel.TimeActivity">
+              <MappingFragment StoreEntitySet="TimeActivity">
+                <ScalarProperty Name="CodeTimeActivity" ColumnName="CodeTimeActivity" />
+                <ScalarProperty Name="ActivitiesCode" ColumnName="ActivitiesCode" />
+                <ScalarProperty Name="DateActivity" ColumnName="DateActivity" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="EmploActiModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+                <ScalarProperty Name="NameUser" ColumnName="NameUser" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
