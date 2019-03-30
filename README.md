@@ -11,11 +11,21 @@ Use Swagger como herramienta para documentar y como cliente de prueba para mis A
 
 
 ![Step2](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/2.png)
+Esta es la pantalla principal de la aplicación, se puede observar en la parte superior el menú de la misma.
+
 ![Step3](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/3.png)
+Pantalla principal de las actividades, este es el formulario para realizar las acciones (Ingresar/Actualizar/Buscar y Limpiar) con el formulario.
+
 ![Step4](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/4.png)
+En esta imagen se observa una actividad ingresada y muestra el mensaje de que se ha realizado con éxito.
+
 ![Step5](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/5.png)
+Esta imagen se observa una actividad buscada.
+
 ![Step6](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/6.png)
 ![Step7](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/7.png)
+Esta imagen se observa el mensaje en el caso de que la actividad que se este buscando no se encuente registrado. En caso de que la actividad exista muestra los datos en cada campo (Imagen3).
+
 ![Step8](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/8.png)
 ![Step9](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/9.png)
 ![Step10](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/10.png)
