@@ -22,8 +22,8 @@ namespace EmploActi.BussinessLogic
                 if (CountActi == 0)
                 {
                     Activities ACTIV = new Activities();
-                    ACTIV.ActivitiesCode = IACT.ActivitiesCode;
                     ACTIV.NameActivities = IACT.NameActivities;
+                    ACTIV.IdUser = IACT.IdUser;
 
                     BDEA.Activities.Add(ACTIV);
                     BDEA.SaveChanges();
@@ -126,6 +126,34 @@ namespace EmploActi.BussinessLogic
             try
             {
                 ltsactivi = (from Activities in BDEA.Activities
+                             select new ActivitiesBE
+                             {
+                                 ActivitiesCode = Activities.ActivitiesCode,
+                                 NameActivities = Activities.NameActivities
+                             }).ToList();
+            }
+            catch (Exception EX)
+            {
+
+            }
+            finally
+            {
+                BDEA.Dispose();
+            }
+            return ltsactivi;
+        }
+        #endregion
+
+
+        #region Get Activities By User
+        public List<ActivitiesBE> GetActivitiesByUser(int IDUSER)
+        {
+            List<ActivitiesBE> ltsactivi = new List<ActivitiesBE>();
+            EmploActiEntities BDEA = new EmploActiEntities();
+            try
+            {
+                ltsactivi = (from Activities in BDEA.Activities
+                             where Activities.IdUser == IDUSER
                              select new ActivitiesBE
                              {
                                  ActivitiesCode = Activities.ActivitiesCode,

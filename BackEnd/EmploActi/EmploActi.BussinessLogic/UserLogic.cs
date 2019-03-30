@@ -22,7 +22,6 @@ namespace EmploActi.BussinessLogic
                 if (CountUser == 0)
                 {
                     User US = new User();
-                    US.IdUser = IUSER.IdUser;
                     US.NameUser = IUSER.NameUser;
                     US.Password = IUSER.Password;
 

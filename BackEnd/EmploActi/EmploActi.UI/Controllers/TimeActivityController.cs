@@ -40,6 +40,20 @@ namespace EmploActi.UI.Controllers
         #endregion
 
 
+
+        #region Delete TimeActivity
+        [Route("api/v1/timeactivity/{TIMEACTIVITECODE}")]
+        [HttpDelete]
+        public AnswerResponseBE DeleteTimeActivity(int TIMEACTIVITECODE)
+        {
+            AnswerResponseBE AR = new AnswerResponseBE();
+            TimeActivityLogic TAL = new TimeActivityLogic();
+            AR = TAL.DeleteTimeActivity(TIMEACTIVITECODE);
+            return AR;
+        }
+        #endregion
+
+
         #region Search TimeActivity Code
         [Route("api/v1/timeactivity/searcodetimact/{SEARTIMACTCOD}")]
         [HttpGet]
@@ -73,6 +87,19 @@ namespace EmploActi.UI.Controllers
             List<TimeActivityBE> ltstimeactiidus = new List<TimeActivityBE>();
             TimeActivityLogic TAL = new TimeActivityLogic();
             ltstimeactiidus = TAL.SearchTimActiIdUse(SEARTIMACTIDUS);
+            return ltstimeactiidus;
+        }
+        #endregion
+
+
+        #region Search ActivityCode
+        [Route("api/v1/timeactivity/searacticod/{SEARTACTICOD}")]
+        [HttpGet]
+        public List<TimeActivityBE> SearchActivityCode(int SEARTACTICOD)
+        {
+            List<TimeActivityBE> ltstimeactiidus = new List<TimeActivityBE>();
+            TimeActivityLogic TAL = new TimeActivityLogic();
+            ltstimeactiidus = TAL.SearchActivityCode(SEARTACTICOD);
             return ltstimeactiidus;
         }
         #endregion

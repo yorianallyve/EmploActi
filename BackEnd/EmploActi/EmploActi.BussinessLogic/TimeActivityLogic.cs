@@ -22,7 +22,6 @@ namespace EmploActi.BussinessLogic
                 if (CountTimeActi == 0)
                 {
                     TimeActivity TIMACT = new TimeActivity();
-                    TIMACT.CodeTimeActivity = ITIMAC.CodeTimeActivity;
                     TIMACT.ActivitiesCode = ITIMAC.ActivitiesCode;
                     TIMACT.DateActivity = ITIMAC.DateActivity;
                     TIMACT.Hours = ITIMAC.Hours;
@@ -112,6 +111,74 @@ namespace EmploActi.BussinessLogic
                                   Hours = TimeActivity.Hours,
                                   IdUser = TimeActivity.IdUser,
                               }).FirstOrDefault();
+            }
+            catch (Exception EX)
+            {
+
+            }
+            finally
+            {
+                BDEA.Dispose();
+            }
+            return idTimeacti;
+        }
+
+        #endregion
+
+
+        #region Search for Delete Time Activity
+        public AnswerResponseBE DeleteTimeActivity(int TIMEACTIVITECODE)
+        {
+            AnswerResponseBE AR  = new AnswerResponseBE();
+            EmploActiEntities BDEA = new EmploActiEntities();
+            try
+            {
+                var idTimeacti = BDEA.TimeActivity.Where(x => x.CodeTimeActivity == TIMEACTIVITECODE).FirstOrDefault();
+                if ( idTimeacti!=null){
+                    BDEA.TimeActivity.Remove(idTimeacti);
+                    BDEA.SaveChanges();
+                    AR.CodeError = 0;
+                    AR.DescriptionError = "Se eliminó con éxito";
+                }
+                else
+                {
+                    AR.CodeError = 1;
+                    AR.DescriptionError = "El registro no existe";
+                }
+            }
+            catch (Exception EX)
+            {
+                AR.CodeError = 2;
+                AR.DescriptionError = "Hubo un error";
+            }
+            finally
+            {
+                BDEA.Dispose();
+            }
+            return AR;
+        }
+
+        #endregion
+
+
+        #region Search for ActivityCode 
+        public List<TimeActivityBE> SearchActivityCode(int SEARTACTICOD)
+        {
+            EmploActiEntities BDEA = new EmploActiEntities();
+            List<TimeActivityBE> idTimeacti = new List<TimeActivityBE>();
+            try
+            {
+                idTimeacti = (from TimeActivity in BDEA.TimeActivity
+                              where TimeActivity.ActivitiesCode == SEARTACTICOD
+                              select new TimeActivityBE
+                              {
+                                  CodeTimeActivity = TimeActivity.CodeTimeActivity,
+                                  ActivitiesCode = TimeActivity.ActivitiesCode,
+                                  NameActivities = TimeActivity.Activities.NameActivities,
+                                  DateActivity = TimeActivity.DateActivity,
+                                  Hours = TimeActivity.Hours,
+                                  IdUser = TimeActivity.IdUser,
+                              }).ToList();
             }
             catch (Exception EX)
             {

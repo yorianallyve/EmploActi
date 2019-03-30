@@ -62,6 +62,19 @@ namespace EmploActi.UI.Controllers
             ltstimeacti = TAL.GetActivitiesAll();
             return ltstimeacti;
         }
+        #endregion
+
+
+        #region Get Activities By User
+        [Route("api/v1/activitiesbyuser/{IDUSER}")]
+        [HttpGet]
+        public List<ActivitiesBE> GetActivitiesByUser(int IDUSER)
+        {
+            List<ActivitiesBE> ltstimeacti = new List<ActivitiesBE>();
+            ActivitiesLogic TAL = new ActivitiesLogic();
+            ltstimeacti = TAL.GetActivitiesByUser(IDUSER);
+            return ltstimeacti;
+        }
         #endregion 
     }
 }

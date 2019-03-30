@@ -10,5 +10,6 @@ namespace EmploActi.BussinessEntities
     {
         public int ActivitiesCode { get; set; }
         public string NameActivities { get; set; }
+        public int IdUser { get; set; }
     }
 }
