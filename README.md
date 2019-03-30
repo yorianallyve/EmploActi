@@ -38,8 +38,13 @@ En esta imagen se observa un Usuario ingresado y muestra el mensaje de que se ha
 Esta imagen se observa el mensaje en el caso de que el usuario que se este buscando no se encuente registrado.
 
 ![Step11](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/11.png)
-
+En esta imagen se observa un usuario actualizado y muestra el mensaje de que se ha realizado con éxito.
 
 ![Step12](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/12.png)
+Pantalla principal para registrar las actividades junto con el tiempo y horas por parte del usuario, se debe seleccionar la actividad, seleccionar la fecha y la hora y luego dar click en el boton Guardar.
+
 ![Step13](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/13.png)
+En esta imagen se complementa con la imagen anterior ya que al darle click en el botón guardar sale un mensaje que se aha cuerdado correctamente dicho registro.
+
 ![Step14](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/14.png)
+En esta imagen se observa que se puede eliminar un registro realizado.
