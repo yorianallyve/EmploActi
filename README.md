@@ -14,7 +14,7 @@ Use Swagger como herramienta para documentar y como cliente de prueba para mis A
 Esta es la pantalla principal de la aplicación, se puede observar en la parte superior el menú de la misma.
 
 ![Step3](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/3.png)
-Pantalla principal de las actividades, este es el formulario para realizar las acciones (Ingresar/Actualizar/Buscar y Limpiar) con el formulario.
+Pantalla principal de las actividades, este es el formulario para realizar las acciones (Ingresar/Actualizar/Buscar y Limpiar) con las actividades.
 
 ![Step4](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/4.png)
 En esta imagen se observa una actividad ingresada y muestra el mensaje de que se ha realizado con éxito.
@@ -23,13 +23,23 @@ En esta imagen se observa una actividad ingresada y muestra el mensaje de que se
 Esta imagen se observa una actividad buscada.
 
 ![Step6](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/6.png)
+En esta imagen se observa una actividad actualizada y muestra el mensaje de que se ha realizado con éxito.
+
 ![Step7](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/7.png)
-Esta imagen se observa el mensaje en el caso de que la actividad que se este buscando no se encuente registrado. En caso de que la actividad exista muestra los datos en cada campo (Imagen3).
+Esta imagen se observa el mensaje en el caso de que la actividad que se este buscando no se encuente registrada. En caso de que la actividad exista muestra los datos en cada campo (Imagen3).
 
 ![Step8](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/8.png)
+Pantalla principal de los Usuarios, este es el formulario para realizar las acciones (Ingresar/Actualizar/Buscar y Limpiar) los datos de usuario como son Nombre de Usuario y contraseña.
+
 ![Step9](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/9.png)
+En esta imagen se observa un Usuario ingresado y muestra el mensaje de que se ha realizado con éxito, en caso contrario mostraría un mensaje que falló.
+
 ![Step10](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/10.png)
+Esta imagen se observa el mensaje en el caso de que el usuario que se este buscando no se encuente registrado.
+
 ![Step11](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/11.png)
+
+
 ![Step12](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/12.png)
 ![Step13](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/13.png)
 ![Step14](https://raw.githubusercontent.com/yorianallyve/EmploActi/master/Images/14.png)
