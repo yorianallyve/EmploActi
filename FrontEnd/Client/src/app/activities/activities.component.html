@@ -1,0 +1,26 @@
+<h1>Actividades</h1>
+
+<div class="form-row">
+
+    <div class="form-group col-md-2">
+        <label for="inputId">Id Actividad</label>
+        <input type="text" class="form-control" id="inputId" [(ngModel)]="activities.ActivitiesCode">
+    </div>
+
+    <div class="form-group col-md-4">
+        <label for="NameActivities">Nombre Actividad</label>
+        <input type="text" class="form-control" id="NameActivities" [(ngModel)]="activities.NameActivities">
+    </div>    
+</div>
+
+
+<p *ngIf="NotificationStatus">
+    <ngb-alert [type]="TypeNotification" (close)="closeAlert()">{{ TextNotification }}</ngb-alert>
+</p>
+<button type="button" (click)="onClickInsertActivities()" class="btn btn-outline-dark">Ingresar</button>
+
+<button type="button" (click)="onClickUpdateActivities()" class="btn btn-outline-dark">Actualizar</button>
+
+<button type="button" (click)="onClickSearchCodeActivities()" class="btn btn-outline-dark">Buscar</button>
+
+<button type="button" (click)="OnClickCleanActivities()" class="btn btn-outline-danger">Limpiar</button>

@@ -1,0 +1,47 @@
+<h1>Tiempo</h1>
+
+<div class="form-row">
+  <div class="form-group col-md-5">
+    <label for="inputActivity">Actividad</label>
+    <select id="inputActivity" class="form-control" [(ngModel)]="timeactivity.ActivitiesCode" (ngModelChange)="onChangeActivity($event)">
+      <option selected>Seleccione</option>
+      <option *ngFor="let activities of ltsactivities" [value]="activities.ActivitiesCode">{{activities.NameActivities}}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group col-md-3">
+    <label for="inputDate">Fecha de Actividad</label>
+    <input type="date" class="form-control" id="inputDate" [(ngModel)]="timeactivity.DateActivity">
+  </div>
+  <div class="form-group col-md-1">
+    <label for="inputHour">Hora</label>
+    <input type="text" class="form-control" id="inputHour" [(ngModel)]="timeactivity.Hours" placeholder="0">
+  </div>
+  <div class="form-group col-md-1 ">
+    <button type="button " (click)="onClickAddList() " class="btn btn-primary ">Guardar</button>
+  </div>
+</div>
+
+<table class="table ">
+  <thead>
+    <tr>
+      <th scope="col ">ACTIVIDAD</th>
+      <th scope="col ">FECHA DE ACTIVIDAD</th>
+      <th scope="col ">HORA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let timeactivity of ltstimeact; index as i;">
+      <td>{{timeactivity.NameActivities}}</td>
+      <td>{{timeactivity.DateActivity}}</td>
+      <td>{{timeactivity.Hours}}</td>
+      <button type="button " (click)="onClickDeteleActivitytime(timeactivity.CodeTimeActivity) " class="btn btn-danger ">Eliminar</button>
+    </tr>
+
+  </tbody>
+</table>
+
+<p *ngIf="NotificationStatus ">
+  <ngb-alert [type]="TypeNotification " (close)="closeAlert() ">{{ TextNotification }}</ngb-alert>
+</p>

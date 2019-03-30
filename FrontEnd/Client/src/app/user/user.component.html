@@ -1,0 +1,32 @@
+<h1>Usuarios</h1>
+
+<div class="form-row">
+
+    <div class="form-group col-md-2">
+        <label for="IdUser">Id Usuario</label>
+        <input type="text" class="form-control" id="IdUser" [(ngModel)]="user.IdUser">
+    </div>
+
+    <div class="form-group col-md-2">
+        <label for="NameUser">Nombre Usuario</label>
+        <input type="text" class="form-control" id="NameUser" [(ngModel)]="user.NameUser">
+    </div>
+
+    <div class="form-group col-md-4">
+        <label for="NameActivities">Contraseña</label>
+        <input type="text" class="form-control" id="NameActivities" [(ngModel)]="user.Password">
+    </div>
+</div>
+
+
+
+<p *ngIf="NotificationStatus">
+    <ngb-alert [type]="TypeNotification" (close)="closeAlert()">{{ TextNotification }}</ngb-alert>
+</p>
+<button type="button" (click)="onClickInsertUser()" class="btn btn-outline-dark">Ingresar</button>
+
+<button type="button" (click)="onClickUpdateUser()" class="btn btn-outline-dark">Actualizar</button>
+
+<button type="button" (click)="onClickSearchIdUser()" class="btn btn-outline-dark">Buscar</button>
+
+<button type="button" (click)="OnClickCleanUser()" class="btn btn-outline-danger">Limpiar</button>
